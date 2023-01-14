@@ -1,0 +1,27 @@
+﻿@model AppRole
+@{
+    ViewData["Title"] = "AddRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="container">
+        <div class="card-header ">
+            <h4 class="card-title"> Rol Ekle</h4>
+        </div>
+        <div class="card-body clearfix">
+
+            <form method="post">
+                <div class="form-group">
+                    <label> Rol </label>
+                    <input class="form-control" type="text" asp-for="Name" />
+                </div>
+                
+                <a href="/Role/Index/" class="btn btn-outline-dark float-right ml-2">İptal</a>
+                <button type="submit" class="btn btn-outline-primary float-right">Ekle</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+

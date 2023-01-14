@@ -1,0 +1,46 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header clearfix">
+
+        <h4 class="card-title float-left"> Kategori Listesi</h4>
+        <a href="/Category/AddCategory" class="card-title float-right mr-3 p-2"><i class="now-ui-icons ui-1_simple-add " style="width: 20px; height:20px"></i></a>
+
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+
+
+            <tr>
+                <th width="40%">Kategori</th>
+                <th width="30%">Durum</th>
+                <th width="15%">Sil</th>
+                <th width="15%">Düzenle</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    @if (item.Status)
+                    {
+                        <td>Açık</td>
+                    }
+                    else
+                    {
+                        <td>Kapalı</td>
+                    }
+
+                    <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger">Sil</a></td>
+                    <td><a href="/Category/EditCategory/@item.CategoryID" class="btn btn-outline-success">Düzenle</a></td>
+                </tr>
+            }
+
+        </table>
+        <br />
+    </div>
+</div>
+

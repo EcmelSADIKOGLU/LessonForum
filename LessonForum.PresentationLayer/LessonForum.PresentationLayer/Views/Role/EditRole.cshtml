@@ -1,0 +1,37 @@
+﻿@model AppRole
+@{
+    ViewData["Title"] = "EditRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="container">
+        <div class="card-header ">
+            <h4 class="card-title"> Rol Düzenle </h4>
+        </div>
+        <div class="card-body clearfix">
+            @Html.HiddenFor(x=>x.Id)
+
+            <form method="post">
+                <div class="form-group">
+                    <label> Rol </label>
+                    <input class="form-control" type="text" asp-for="Name"  />
+                </div>
+                <div class="form-group clearfix">
+                    <div class="float-left">
+                        <input type="radio" id="Active" asp-for="Status" value="True">
+                        <label for="Active">Açık</label><br>
+                    </div>
+                    <div class="float-left ml-4">
+                        <input type="radio" id="Pasive" asp-for="Status" value="False">
+                        <label for="Pasive">Kapalı</label><br>
+                    </div>
+                </div>
+                <a href="/Role/Index/" class="btn btn-outline-dark float-right ml-2">İptal</a>
+                <button type="submit" class="btn btn-outline-success float-right">Güncelle</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@model SubCategory
+@{
+    ViewData["Title"] = "AddSubCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="container">
+        <div class="card-header ">
+            <h4 class="card-title">Alt Kategori Ekle</h4>
+        </div>
+        <div class="card-body clearfix">
+
+            <form method="post">
+                <div class="form-group">
+                    <label> Kategori </label>
+                    <input class="form-control" type="text" asp-for="Name" />
+                </div>
+                @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.categoryList, new { @class = "form-control" })
+                <br />
+                <div class="form-group clearfix">
+                    <div class="float-left">
+                        <input type="radio" id="Active" asp-for="Status" value="True">
+                        <label for="Active">Açık</label><br>
+                    </div>
+                    <div class="float-left ml-4">
+                        <input type="radio" id="Pasive" asp-for="Status" value="False">
+                        <label for="Pasive">Kapalı</label><br>
+                    </div>
+                </div>
+                <a href="/SubCategory/Index/" class="btn btn-outline-dark float-right ml-2">İptal</a>
+                <button type="submit" class="btn btn-outline-primary float-right">Ekle</button>
+
+            </form>
+        </div>
+    </div>
+</div>
