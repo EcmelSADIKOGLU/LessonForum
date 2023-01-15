@@ -1,0 +1,29 @@
+﻿@model List<SubCategory>
+@{
+    ViewData["Title"] = "SubCategoryList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header clearfix">
+        <h4 class="card-title float-left">Alt Kategori Listesi</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th width="80%">Alt Kategori</th>
+                <th width="20%">Notlar</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.Name</td>
+                    <td><a href="/Guest/Note/LessonNoteList/@item.SubCategoryID" class="btn btn-outline-success">Notlar</a></td>
+                    </tr>
+            }
+
+        </table>
+        <br />
+    </div>
+</div>
+
+

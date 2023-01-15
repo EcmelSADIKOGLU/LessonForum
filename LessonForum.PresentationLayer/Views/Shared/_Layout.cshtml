@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("~/Views/Layout/HeadPartial.cshtml")
+
+<body class="">
+    <div class="wrapper ">
+        @await Component.InvokeAsync("SidebarComponent")
+        <div class="main-panel">
+            <!-- Navbar -->
+            @await Html.PartialAsync("~/Views/Layout/NavbarPartial.cshtml")
+            
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                            @RenderBody()
+                    </div>
+                </div>
+            </div>
+            @await Html.PartialAsync("~/Views/Layout/FooterPartial.cshtml")
+        </div>
+    </div>
+</body>
+@await Html.PartialAsync("~/Views/Layout/JSPartial.cshtml")
+
+</html>
+@RenderBody()
