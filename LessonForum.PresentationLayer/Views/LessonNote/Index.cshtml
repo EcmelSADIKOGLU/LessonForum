@@ -8,17 +8,18 @@
 
     <div class="card-header clearfix">
         <h4 class="card-title float-left"> Ders Notu Listesi</h4>
+        <a href="/LessonNote/BannedLessonNoteList/" class="btn btn-outline-dark card-title float-right mr-3 p-2"> Banlı Dosyalar </a>
     </div>
 
     <div class="card-body">
         <table class="table table-bordered">
             <tr>
-                <th width="25%">Başlık</th>
+                <th width="40%">Başlık</th>
                 <th width="15%">Alt Kategori</th>
                 <th width="15%">Kategori</th>
-                <th width="15%">Durum</th>
-                <th width="15%">Sil</th>
-                <th width="15%">Detaylar</th>
+                <th width="5%">Sil</th>
+                <th width="10%">Görüntüle</th>
+                <th width="10%">Detaylar</th>
             </tr>
             @foreach (var item in Model)
             {
@@ -26,16 +27,8 @@
                     <td>@item.Title</td>
                     <td>@item.SubCategory.Name</td>
                     <td>@item.SubCategory.Category.Name</td>
-                    @if (item.Status)
-                    {
-                        <td>Açık</td>
-                    }
-                    else
-                    {
-                        <td>Kapalı</td>
-                    }
-
                     <td><a href="/LessonNote/DeleteLessonNote/@item.LessonNotesID" class="btn btn-outline-danger">Sil</a></td>
+                    <td><a target="_blank" href="~/LessonNoteStorage/@item.FileName" class="btn btn-outline-primary">Görüntüle</a></td>
                     <td><a href="/LessonNote/LessonNoteDetails/@item.LessonNotesID" class="btn btn-outline-success">Detaylar</a></td>
                 </tr>
             }

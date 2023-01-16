@@ -28,9 +28,9 @@
 
   <ItemGroup>
     <Folder Include="Areas\Guest\Data\" />
-    <Folder Include="Areas\Guest\Models\" />
     <Folder Include="Areas\Manager\Data\" />
     <Folder Include="Areas\Manager\Models\" />
+    <Folder Include="wwwroot\LessonNoteStorage\" />
   </ItemGroup>
 
 </Project>

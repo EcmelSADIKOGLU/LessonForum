@@ -28,13 +28,20 @@ using LessonForum.PresentationLayer.Models;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\Areas\Guest\Views\_ViewImports.cshtml"
+using LessonForum.PresentationLayer.Areas.Guest.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\Areas\Guest\Views\_ViewImports.cshtml"
 using LessonForum.EntityLayer.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d7eb24503cc27a1e2ae2aa1dda87bd8e54b01f9b", @"/Areas/Guest/Views/About/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3a225bcf6cf79c7b0dc49baccb06472923517307", @"/Areas/Guest/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3d80549f9c4df0b8f7686413baba786f470ef5f0", @"/Areas/Guest/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Guest_Views_About_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -93,7 +100,7 @@ using LessonForum.EntityLayer.Entities;
             <br />
             <div class=""clearfix"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d7eb24503cc27a1e2ae2aa1dda87bd8e54b01f9b6735", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d7eb24503cc27a1e2ae2aa1dda87bd8e54b01f9b6980", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

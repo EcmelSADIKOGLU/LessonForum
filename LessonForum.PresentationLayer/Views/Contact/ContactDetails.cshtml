@@ -1,0 +1,46 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "ContactDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+
+    <div class="card-header clearfix">
+        <h4 class="card-title float-left"> Ders Notu Listesi</h4>
+    </div>
+
+    <div class="card-body">
+        <form method="post">
+            @Html.HiddenFor(x=>x.ContactID)
+            <table class="table table-bordered">
+                <tr>
+                    <td width="25%">Gönderen</td>
+                    <td>@Model.SenderMail</td>
+                </tr>
+                <tr>
+                    <td>Konu</td>
+                    <td>@Model.Subject</td>
+                </tr>
+                <tr>
+                    <td>Mesaj</td>
+                    <td>@Model.Message</td>
+                </tr>
+                <tr>
+                    <td>Tarih</td>
+                    <td>@Model.Date.ToString("dd-MM-yyyy")</td>
+                </tr>
+            </table>
+
+
+            <div class="clearfix">
+
+                <a href="/Contact/Index" class="btn btn-outline-dark float-right">Kapat</a>
+                <a href="/Contact/DeleteContact/@Model.ContactID" class="btn btn-outline-danger float-right mr-2">Sil</a>
+
+            </div>
+        </form>
+
+        <br />
+    </div>
+</div>

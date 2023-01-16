@@ -1,10 +1,13 @@
 ﻿using LessonForum.BusinessLayer.Abstract;
 using LessonForum.BusinessLayer.Concrete;
 using LessonForum.EntityLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace LessonForum.PresentationLayer.Controllers
 {
+    [Authorize(Roles = "Admin,Yönetici")]
     public class CategoryController : Controller
     {
         ICategoryService _categoryService;

@@ -19,5 +19,6 @@ namespace LessonForum.DataAccessLayer.Concrete
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<LessonNote> LessonNotes { get; set; }
         public DbSet<Log> Logs { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }

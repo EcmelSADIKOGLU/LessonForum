@@ -45,14 +45,17 @@ namespace LessonForum.PresentationLayer
             services.AddScoped<ILogDAL, EFLogDAL>();
             services.AddScoped<ILogService, LogManager>();
 
+            services.AddScoped<IContactDAL, EFContactDAL>();
+            services.AddScoped<IContactService, ContactManager>();
+
             //Kimse giriş yapmadıysa sayfalar açılmaz
-            services.AddMvc(config =>
-            {
-                var policy = new AuthorizationPolicyBuilder()
-                             .RequireAuthenticatedUser()
-                             .Build();
-                config.Filters.Add(new AuthorizeFilter(policy));
-            });
+            //services.AddMvc(config =>
+            //{
+            //    var policy = new AuthorizationPolicyBuilder()
+            //                 .RequireAuthenticatedUser()
+            //                 .Build();
+            //    config.Filters.Add(new AuthorizeFilter(policy));
+            //});
             services.AddMvc();
 
             //Giriş yapılmadıysa login sayfasına atılır

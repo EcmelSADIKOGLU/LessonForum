@@ -22,12 +22,7 @@
                         <p>Hakkımızda</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/Guest/Note/PopularNotes/">
-                        <i class="now-ui-icons location_map-big"></i>
-                        <p>Popüler Notlar</p>
-                    </a>
-                </li>
+
                 <li>
                     <a href="/Guest/Note/Index/">
                         <i class="now-ui-icons location_map-big"></i>
@@ -44,6 +39,25 @@
             }
             @if (ViewBag.Role == "Yönetici")
             {
+                <li>
+                    <a href="/Guest/About/Index/">
+                        <i class="now-ui-icons business_badge"></i>
+                        <p>Hakkımızda</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Guest/Note/Index/">
+                        <i class="now-ui-icons location_map-big"></i>
+                        <p>Notlar</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Guest/Contact/Index/">
+                        <i class="now-ui-icons ui-1_email-85"></i>
+                        <p>Kullanıcı İletişim Paneli</p>
+                    </a>
+                </li>
                 <li>
                     <a href="/Category/Index/">
                         <i class="now-ui-icons design_app"></i>
@@ -69,14 +83,33 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Category/Index/">
+                    <a href="/Contact/Index/">
                         <i class="now-ui-icons ui-1_email-85"></i>
-                        <p>İletişim</p>
+                        <p>Gelen Mesajlar</p>
                     </a>
                 </li>
             }
             @if (ViewBag.Role == "Admin")
             {
+                <li>
+                    <a href="/Guest/About/Index/">
+                        <i class="now-ui-icons business_badge"></i>
+                        <p>Hakkımızda</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Guest/Note/Index/">
+                        <i class="now-ui-icons location_map-big"></i>
+                        <p>Notlar</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Guest/Contact/Index/">
+                        <i class="now-ui-icons ui-1_email-85"></i>
+                        <p>Kullanıcı İletişim Paneli</p>
+                    </a>
+                </li>
                 <li>
                     <a href="/Category/Index/">
                         <i class="now-ui-icons design_app"></i>
@@ -102,17 +135,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Category/Index/">
-                        <i class="now-ui-icons ui-1_email-85"></i>
-                        <p>İletişim</p>
-                    </a>
-                </li>
-                <li>
                     <a href="/Role/Index/">
                         <i class="now-ui-icons users_single-02"></i>
                         <p>Roller</p>
                     </a>
-                </li>
+                </li>   
                 <li>
                     <a href="/Log/Index/">
                         <i class="now-ui-icons text_caps-small"></i>
@@ -120,9 +147,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Category/Index/">
+                    <a href="/Contact/Index/">
                         <i class="now-ui-icons ui-1_email-85"></i>
-                        <p>İletişim</p>
+                        <p>Gelen Mesajlar</p>
                     </a>
                 </li>
             }

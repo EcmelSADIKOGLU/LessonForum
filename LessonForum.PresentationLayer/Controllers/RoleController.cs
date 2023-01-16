@@ -1,5 +1,6 @@
 ﻿using LessonForum.BusinessLayer.Abstract;
 using LessonForum.EntityLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace LessonForum.PresentationLayer.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;

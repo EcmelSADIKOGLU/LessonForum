@@ -1,0 +1,41 @@
+﻿@model List<LessonNote>
+@{
+    ViewData["Title"] = "BannedLessonNoteList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+
+    <div class="card-header clearfix">
+        <h4 class="card-title float-left"> Ders Notu Listesi</h4>
+        <a href="/LessonNote/Index/" class="btn btn-outline-success card-title float-right mr-3 p-2">Ders Notları</a>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th width="40%">Başlık</th>
+                <th width="15%">Alt Kategori</th>
+                <th width="15%">Kategori</th>
+                <th width="5%">Sil</th>
+                <th width="10%">Görüntüle</th>
+                <th width="10%">Ban Kaldır</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.SubCategory.Name</td>
+                    <td>@item.SubCategory.Category.Name</td>
+
+                    <td><a href="/LessonNote/DeleteLessonNote/@item.LessonNotesID" class="btn btn-outline-danger">Sil</a></td>
+                    <td><a target="_blank" href="~/LessonNoteStorage/@item.FileName" class="btn btn-outline-primary">Görüntüle</a></td>
+                    <td><a href="/LessonNote/UnbanLessonNote/@item.LessonNotesID" class="btn btn-outline-success">Ban Kaldır</a></td>
+                </tr>
+            }
+
+        </table>
+        <br />
+    </div>
+</div>
+

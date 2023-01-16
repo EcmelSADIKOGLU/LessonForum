@@ -27,28 +27,16 @@
             <tr>
                 <td>Alt Kategori</td>
                 <td>@Model.SubCategory.Name</td>
-            </tr>
-            <tr>
-                <td>Oluşturan</td>
-                <td>Düzenlenecek</td>
-            </tr>
+            </tr>>
             <tr>
                 <td>Dosya Adı</td>
                 <td>@Model.FileName</td>
             </tr>
-            <tr>
-                <td>Durum</td>
-                @if (Model.Status)
-                {
-                    <td>Açık</td>
-                }
-                else
-                {
-                    <td>Kapalı</td>
-                }
-            </tr>
         </table>
+
         <a href="/LessonNote/Index/" class="btn btn-outline-dark float-right ml-2">İptal</a>
+        <a href="/LessonNote/BanLessonNote/@Model.LessonNotesID" class="btn btn-outline-danger float-right ml-2">Banla</a>
+        <a target="_blank" href="~/LessonNoteStorage/@Model.FileName" class="btn btn-outline-primary float-right ml-2">Görüntüle</a>
         <a href="/LessonNote/DeleteLessonNote/@Model.LessonNotesID" class="btn btn-outline-danger float-right">Sil</a>
         <br />
     </div>

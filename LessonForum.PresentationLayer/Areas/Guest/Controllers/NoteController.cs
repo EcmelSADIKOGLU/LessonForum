@@ -1,8 +1,13 @@
 ﻿using LessonForum.BusinessLayer.Abstract;
 using LessonForum.EntityLayer.Entities;
+using LessonForum.PresentationLayer.Areas.Guest.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace LessonForum.PresentationLayer.Areas.Guest.Controllers
 {
@@ -42,14 +47,69 @@ namespace LessonForum.PresentationLayer.Areas.Guest.Controllers
 
         [Route("")]
         [Route("LessonNoteList/{id}")]
-        public  async Task< IActionResult> LessonNoteList(int id)
+        public  IActionResult LessonNoteList(int id)
         {
+            ViewBag.subcategoryID = id;
+
             var values = _lessonNoteService.TGetList(x => x.Status && x.SubCategory.SubCategoryID == id);
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var roles = await _userManager.GetRolesAsync(user);
-            ViewBag.Role = roles[0];
+            if (User.Identity.IsAuthenticated)
+            {
+
+                ViewBag.Authenticated = true;
+            }
+            else
+            {
+                ViewBag.Authenticated = false;
+            }
+            
 
             return View(values);
         }
+
+        [Authorize(Roles = "Admin,Yönetici,Üye")]
+        [Route("")]
+        [Route("AddNote/{id}")]
+        [HttpGet]
+        public IActionResult AddNote(int id)
+        {
+            ViewBag.subcategoryID = id;
+            return View();
+        }
+
+        [Authorize(Roles = "Admin,Yönetici,Üye")]
+        [Route("")]
+        [Route("AddNote/{id}")]
+        [HttpPost]
+        public async Task< IActionResult> AddNote(AddLessonNoteViewModel model)
+        {
+
+            var filename = "";
+
+            if (model.LessonFile != null)
+            {
+                var resource = Directory.GetCurrentDirectory();
+                var extention = Path.GetExtension(model.LessonFile.FileName);
+                filename = Guid.NewGuid() + extention;
+                var saveLocation = resource + "/wwwroot/LessonNoteStorage/" + filename;
+                var stream = new FileStream(saveLocation, FileMode.Create);
+                await model.LessonFile.CopyToAsync(stream);
+                
+            }
+
+            LessonNote lessonNote = new LessonNote() 
+            {
+                SubCategoryID = model.SubCategoryID,
+                Title = model.Title,
+                Description= model.Description,
+                FileName = filename,
+                Status = true,
+                Deleted = false  
+            };
+            
+            _lessonNoteService.TInsert(lessonNote);
+            return Redirect("/Guest/Note/LessonNoteList/" + model.SubCategoryID);
+            
+        }
+
     }
 }

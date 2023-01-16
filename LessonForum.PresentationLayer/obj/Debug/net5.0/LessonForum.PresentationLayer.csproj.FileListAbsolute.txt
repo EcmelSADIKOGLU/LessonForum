@@ -334,7 +334,6 @@ C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Layout\HeadPartial.cshtml.g.cs
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Layout\JSPartial.cshtml.g.cs
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Layout\NavbarPartial.cshtml.g.cs
-C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Layout\SidebarPartial.cshtml.g.cs
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\LessonNote\Index.cshtml.g.cs
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\LessonNote\LessonNoteDetails.cshtml.g.cs
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Login\Login.cshtml.g.cs
@@ -372,3 +371,9 @@ C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Areas\Guest\Views\_ViewImports.cshtml.g.cs
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Areas\Guest\Views\Note\SubCategoryList.cshtml.g.cs
 C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Areas\Guest\Views\Note\LessonNoteList.cshtml.g.cs
+C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Areas\Guest\Views\Note\AddNote.cshtml.g.cs
+C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Areas\Guest\Views\Contact\Index.cshtml.g.cs
+C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Contact\ContactDetails.cshtml.g.cs
+C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\Shared\Components\NavbarComponent\Default.cshtml.g.cs
+C:\Users\ecmel\source\repos\LessonForum\LessonForum.PresentationLayer\obj\Debug\net5.0\Razor\Views\LessonNote\BannedLessonNoteList.cshtml.g.cs

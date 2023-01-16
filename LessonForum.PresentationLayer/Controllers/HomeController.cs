@@ -18,9 +18,9 @@ namespace LessonForum.PresentationLayer.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            return View();
+            return Redirect("/Guest/Note/Index");
         }
 
         public IActionResult Privacy()

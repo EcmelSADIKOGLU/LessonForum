@@ -5,30 +5,33 @@
 }
 
 <div class="card">
-    <div class="card-header clearfix">
-        <h4 class="card-title float-left">Notlar</h4>
-        @if (ViewBag.Role == "Üye")
-        {
-            <a href="/Guest/Note/AddNote/" class="card-title float-right mr-3 p-2"><i class="now-ui-icons ui-1_simple-add " style="width: 20px; height:20px"></i></a>
-        }
-        
-    </div>
-    <div class="card-body">
-        <table class="table table-bordered">
-            <tr>
-                <th width="80%">Not</th>
-                <th width="20%">İndir</th>
-            </tr>
-            @foreach (var item in Model)
+    <div class="container">
+        <br />
+        <div class="card-header clearfix">
+            <h4 class="card-title float-left">Notlar</h4>
+            @if (ViewBag.Authenticated)
             {
-                <tr>
-                    <td>@item.Title</td>
-                    <td><a href="/Guest/Note/LessonNoteList/@item.SubCategoryID" class="btn btn-outline-danger">İndir</a></td>
-                </tr>
+                <a href="/Guest/Note/AddNote/@ViewBag.subcategoryID" class="card-title float-right mr-3 p-2"><i class="now-ui-icons ui-1_simple-add " style="width: 20px; height:20px"></i></a>
             }
 
-        </table>
-        <br />
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <th width="80%">Not</th>
+                    <th width="20%">İndir</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td><a target="_blank" href="~/LessonNoteStorage/@item.FileName" class="btn btn-outline-danger">Görüntüle</a></td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+        </div>
     </div>
 </div>
 

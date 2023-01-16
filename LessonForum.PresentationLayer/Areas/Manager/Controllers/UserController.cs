@@ -1,10 +1,12 @@
 ﻿using LessonForum.BusinessLayer.Abstract;
 using LessonForum.EntityLayer.Entities;
 using LessonForum.PresentationLayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,6 +14,7 @@ namespace LessonForum.PresentationLayer.Areas.Manager.Controllers
 {
     [Area("Manager")]
     [Route("Manager/User")]
+    [Authorize(Roles = "Yönetici")]
     public class UserController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

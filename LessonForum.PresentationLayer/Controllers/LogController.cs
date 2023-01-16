@@ -1,9 +1,12 @@
 ﻿using LessonForum.BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Linq;
 
 namespace LessonForum.PresentationLayer.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class LogController : Controller
     {
         ILogService _logService;
