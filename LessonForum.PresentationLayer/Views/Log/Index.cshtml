@@ -5,30 +5,33 @@
 }
 
 <div class="card">
-    <div class="card-header clearfix">
-
-        <h4 class="card-title float-left"> Rapor Listesi</h4>
-        
-
-    </div>
-    <div class="card-body">
-        <table class="table table-bordered">
-
-
-            <tr>
-                <th width="85%">Rapor</th>
-                <th width="15%">Tarih</th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.LogDescription</td>
-                    <td>@item.LogDate.ToString("dd-MM-yyyy")</td>
-                </tr>
-            }
-
-        </table>
+    <div class="container">
         <br />
+        <div class="card-header clearfix">
+
+            <h4 class="card-title float-left"> Rapor Listesi</h4>
+
+
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+
+
+                <tr>
+                    <th width="85%">Rapor</th>
+                    <th width="15%">Tarih</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.LogDescription</td>
+                        <td>@item.LogDate.ToString("dd-MM-yyyy")</td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+        </div>
     </div>
 </div>
 

@@ -5,43 +5,46 @@
 }
 
 <div class="card">
-    <div class="card-header clearfix">
-
-        <h4 class="card-title float-left"> Üye Listesi</h4>
-        <a href="/User/BannedUserList/" class="btn btn-outline-dark card-title float-right mr-3 p-2"> Kara Liste</a>
-        
-
-    </div>
-    <div class="card-body">
-        <table class="table table-bordered">
-
-
-            <tr>
-                <th width="30%">İsim</th>
-                <th width="30%">Rol</th>
-                <th width="20%">Durum</th>
-                <th width="15%">Detaylar</th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Name @item.Surname</td>
-                    <td>@item.Role</td>
-                    @if (item.Status)
-                    {
-                        <td>Açık</td>
-                    }
-                    else
-                    {
-                        <td>Kapalı</td>
-                    }
-
-                   
-                    <td><a href="/User/UserDetails/@item.Id" class="btn btn-outline-success">Detaylar</a></td>
-                </tr>
-            }
-
-        </table>
+    <div class="container">
         <br />
+        <div class="card-header clearfix">
+
+            <h4 class="card-title float-left"> Üye Listesi</h4>
+            <a href="/User/BannedUserList/" class="btn btn-outline-dark card-title float-right mr-3 p-2"> Kara Liste</a>
+
+
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+
+
+                <tr>
+                    <th width="30%">İsim</th>
+                    <th width="30%">Rol</th>
+                    <th width="20%">Durum</th>
+                    <th width="15%">Detaylar</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name @item.Surname</td>
+                        <td>@item.Role</td>
+                        @if (item.Status)
+                        {
+                            <td>Açık</td>
+                        }
+                        else
+                        {
+                            <td>Kapalı</td>
+                        }
+
+
+                        <td><a href="/User/UserDetails/@item.Id" class="btn btn-outline-success">Detaylar</a></td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+        </div>
     </div>
 </div>

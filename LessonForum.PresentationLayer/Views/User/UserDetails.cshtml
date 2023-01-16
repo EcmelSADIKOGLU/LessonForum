@@ -5,60 +5,62 @@
 }
 
 <div class="card">
-
-    <div class="card-header clearfix">
-        <h4 class="card-title float-left"> Ders Notu Listesi</h4>
-    </div>
-
-    <div class="card-body">
-        <form method="post">
-            @Html.HiddenFor(x=>x.Id)
-            <table class="table table-bordered">
-                <tr>
-                    <td width="25%">İsim</td>
-                    <td>@Model.Name</td>
-                </tr>
-                <tr>
-                    <td>Soyisim</td>
-                    <td>@Model.Surname</td>
-                </tr>
-                <tr>
-                    <td>Kullanıcı Adı</td>
-                    <td>@Model.UserName</td>
-                </tr>
-                <tr>
-                    <td>Mail</td>
-                    <td>@Model.Email</td>
-                </tr>
-
-                <tr>
-                    <td>Durum</td>
-                    @if (Model.Status)
-                    {
-                        <td>Aktif</td>
-                    }
-                    else
-                    {
-                        <td>Banlı</td>
-                    }
-                </tr>
-
-                <tr>
-                    <td>Rol</td>
-                    <td>
-                        @Html.DropDownListFor(m => m.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control" })
-                    </td>
-                </tr>
-                    
-            </table>
-            <div class="clearfix">
-                <button type="submit" class="btn btn-outline-success float-right">Kullanıcıyı Güncelle</button>
-                <a href="/User/BanUser/@Model.Id" class="btn btn-outline-danger float-right">Kullanıcıyı Banla</a>
-                
-            </div>
-        </form>
-
+    <div class="container">
         <br />
+        <div class="card-header clearfix">
+            <h4 class="card-title float-left"> Ders Notu Listesi</h4>
+        </div>
+
+        <div class="card-body">
+            <form method="post">
+                @Html.HiddenFor(x=>x.Id)
+                <table class="table table-bordered">
+                    <tr>
+                        <td width="25%">İsim</td>
+                        <td>@Model.Name</td>
+                    </tr>
+                    <tr>
+                        <td>Soyisim</td>
+                        <td>@Model.Surname</td>
+                    </tr>
+                    <tr>
+                        <td>Kullanıcı Adı</td>
+                        <td>@Model.UserName</td>
+                    </tr>
+                    <tr>
+                        <td>Mail</td>
+                        <td>@Model.Email</td>
+                    </tr>
+
+                    <tr>
+                        <td>Durum</td>
+                        @if (Model.Status)
+                        {
+                            <td>Aktif</td>
+                        }
+                        else
+                        {
+                            <td>Banlı</td>
+                        }
+                    </tr>
+
+                    <tr>
+                        <td>Rol</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control" })
+                        </td>
+                    </tr>
+
+                </table>
+                <div class="clearfix">
+                    <button type="submit" class="btn btn-outline-success float-right">Kullanıcıyı Güncelle</button>
+                    <a href="/User/BanUser/@Model.Id" class="btn btn-outline-danger float-right">Kullanıcıyı Banla</a>
+
+                </div>
+            </form>
+
+            <br />
+        </div>
     </div>
 </div>
 
